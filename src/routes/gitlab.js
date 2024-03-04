@@ -41,7 +41,7 @@ router.post('/', (req, res) => {
                     console.log(`INFO: Deployment job is successful (Project ID: ${projectId}), starting download`)
                     downloadArtifact(projectId)
                   } else {
-                  // By default we use the Job ID to fetch the GitLab Artifact
+                    // By default we use the Job ID to fetch the GitLab Artifact
                     console.log(`INFO: Deployment job is successful (Project ID: ${projectId}, Job ID: ${jobId}), starting download`)
                     downloadArtifact(projectId, jobId)
                   }
