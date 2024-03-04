@@ -1,6 +1,6 @@
 {
   "name": "gitlab-artifact-deployer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A service that deploys GitLab artifacts to live production",
   "main": "src/index.js",
   "scripts": {
@@ -27,14 +27,14 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "adm-zip": "^0.5.10",
-    "dotenv": "^16.0.3",
-    "express": "^4.17.1"
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3"
   },
   "devDependencies": {
-    "eslint": "^7.23.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^4.3.1"
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1"
   }
 }
