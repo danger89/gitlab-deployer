@@ -3,6 +3,7 @@ const projectIdOverride = process.env.PROJECT_ID
 const useJobName = process.env.USE_JOB_NAME || 'no'
 const express = require('express')
 const downloadArtifact = require('../download')
+const postDeploymentExecute = require('../post-deployment')
 const router = express.Router()
 
 // Handle GitLab web hook POST call(s)
@@ -40,10 +41,12 @@ router.post('/', (req, res) => {
                   if (useJobName === 'yes') {
                     console.log(`INFO: Deployment job is successful (Project ID: ${projectId}), starting download`)
                     downloadArtifact(projectId)
+                    postDeploymentExecute()
                   } else {
                     // By default we use the Job ID to fetch the GitLab Artifact
                     console.log(`INFO: Deployment job is successful (Project ID: ${projectId}, Job ID: ${jobId}), starting download`)
                     downloadArtifact(projectId, jobId)
+                    postDeploymentExecute()
                   }
                 }, 3000)
                 break

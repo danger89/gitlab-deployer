@@ -22,17 +22,18 @@ cp .env.example .env
 
 See below for all the available options, only the `GITLAB_SECRET_TOKEN` environment variable is actually mandatory:
 
-| Environment Var       | Description                                                                                        | Required |
-| --------------------- | -------------------------------------------------------------------------------------------------- | -------- |
-| `GITLAB_SECRET_TOKEN` | GitLab Secret Token, which is **required** for safety reasons.                                     | yes      |
-| `GITLAB_HOSTNAME`     | GitLab Host, default: `gitlab.com`                                                                 | no       |
-| `USE_JOB_NAME`        | Instead of Job ID from the webhook body request, use job name and branch name (not set by default) | no       |
-| `PROJECT_ID`          | GitLab Project ID (not set by default), retrieving project ID from webhook body request            | no       |
-| `REPO_BRANCH`         | Branch to download artifact from, default: `main`                                                  | no       |
-| `JOB_NAME`            | Job name to download artifact from, default: `deploy`                                              | no       |
-| `ACCESS_TOKEN`        | Access token, for private repository (not set by default)                                          | no       |
-| `DESTINATION_PATH`    | Destination path where the artifact zip content is extracted, default: `dest` folder               | no       |
-| `TEMP_FOLDER`         | Temporarily file path where the artifact zip is stored, default: `tmp` folder                      | no       |
+| Environment Var           | Description                                                                                        | Required |
+| ------------------------- | -------------------------------------------------------------------------------------------------- | -------- |
+| `GITLAB_SECRET_TOKEN`     | GitLab Secret Token, which is **required** for safety reasons.                                     | yes      |
+| `GITLAB_HOSTNAME`         | GitLab Host, default: `gitlab.com`                                                                 | no       |
+| `USE_JOB_NAME`            | Instead of Job ID from the webhook body request, use job name and branch name (not set by default) | no       |
+| `PROJECT_ID`              | GitLab Project ID (not set by default), retrieving project ID from webhook body request            | no       |
+| `REPO_BRANCH`             | Branch to download artifact from, default: `main`                                                  | no       |
+| `JOB_NAME`                | Job name to download artifact from, default: `deploy`                                              | no       |
+| `ACCESS_TOKEN`            | Access token, for private repository (not set by default)                                          | no       |
+| `DESTINATION_PATH`        | Destination path where the artifact zip content is extracted, default: `dest` folder               | no       |
+| `TEMP_FOLDER`             | Temporarily file path where the artifact zip is stored, default: `tmp` folder                      | no       |
+| `POST_DEPLOYMENT_COMMAND` | Optional post-deployment command in the `DESTINATION_PATH`. Eg. `php spark cache:clear`            | no       |
 
 _Hint:_ Adapt the `.env` file to your settings (eg. `GITLAB_SECRET_TOKEN`), read the section below: "Adding GitLab Webhook". As long as this token will match the token you will give it during the webhook setup, everything should be fine.
 
