@@ -7,6 +7,7 @@ const fs = require('fs')
 const https = require('https')
 const path = require('path')
 const extract = require('./extract')
+const postDeploymentExecute = require('../post-deployment')
 const TEMP_FOLDER = process.env.TEMP_FOLDER || path.join(__dirname, '..', 'tmp')
 
 class Download {
@@ -58,6 +59,7 @@ class Download {
               console.error(err)
             } else {
               Download.extractFile(absolutePath)
+              postDeploymentExecute()
             }
           })
         })
