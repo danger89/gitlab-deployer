@@ -1,13 +1,15 @@
 FROM node:lts-slim
 ENV NODE_ENV production
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 WORKDIR /app
 
 COPY package.json package.json
 COPY package-lock.json package-lock.json
 
 # Install PHP (used for post-deployment commands)
-RUN apt update && apt install -y php-cli
+RUN apt update && apt install -y php-cli php-intl php-mbstring php-xml php-zip
 
 # Worarkound https://github.com/npm/cli/issues/5900
 RUN npm install --omit=dev && \
