@@ -33,7 +33,8 @@ See below for all the available options, only the `GITLAB_SECRET_TOKEN` environm
 | `ACCESS_TOKEN`            | Access token, for private repository (not set by default)                                          | no       |
 | `DESTINATION_PATH`        | Destination path where the artifact zip content is extracted, default: `dest` folder               | no       |
 | `TEMP_FOLDER`             | Temporarily file path where the artifact zip is stored, default: `tmp` folder                      | no       |
-| `POST_DEPLOYMENT_COMMAND` | Optional post-deployment command in the `DESTINATION_PATH`. Eg. `php spark cache:clear`            | no       |
+| `POST_DEPLOYMENT_COMMAND` | Optional post-deployment command in the `POST_DEPLOYMENT_CWD`. Eg. `php spark cache:clear`         | no       |
+| `POST_DEPLOYMENT_CWD`     | Set the current working directory for the post-deployment command, default: `$DESTINATION_PATH`    | no       |
 
 _Hint:_ Adapt the `.env` file to your settings (eg. `GITLAB_SECRET_TOKEN`), read the section below: "Adding GitLab Webhook". As long as this token will match the token you will give it during the webhook setup, everything should be fine.
 
