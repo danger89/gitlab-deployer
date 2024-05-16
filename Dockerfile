@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM node:22-slim
 ENV NODE_ENV production
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -12,7 +12,7 @@ COPY package-lock.json package-lock.json
 RUN apt update && apt install -y php-cli php-intl php-mbstring php-xml php-zip
 
 # Worarkound https://github.com/npm/cli/issues/5900
-RUN npm install --omit=dev && \
+RUN npm install --omit=dev --no-fund --no-audit && \
   chown -R node:node node_modules
 
 COPY --chown=node:node . .
