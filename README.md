@@ -1,3 +1,11 @@
+
+## **IMPORTANT**: This project is replaced by its Go implementation: [https://gitlab.melroy.org/melroy/gitlab-artifact-deployer-go](https://gitlab.melroy.org/melroy/gitlab-artifact-deployer-go)
+
+This project will not be updated anymore, please see the gitlab-artifact-deployer-go project instead. Which is a rewrite in Golang.
+
+---
+
+
 # GitLab Artifact Deployer
 
 This service will listen for completed GitLab Deployment jobs, retrieves the latest (build) artifact and deploys the artifact on the live production environment.
