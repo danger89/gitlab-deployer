@@ -1,5 +1,5 @@
 
-## **IMPORTANT**: This project is replaced by its Go implementation: [https://gitlab.melroy.org/melroy/gitlab-artifact-deployer-go](https://gitlab.melroy.org/melroy/gitlab-artifact-deployer-go)
+## **IMPORTANT**: This project is replaced by its Go implementation, on GitHub: [melroy89/gitlab-deployer-go](https://github.com/melroy89/gitlab-deployer-go) And on: [GitLab](https://gitlab.melroy.org/melroy/gitlab-artifact-deployer-go)
 
 This project will not be updated anymore, please see the gitlab-artifact-deployer-go project instead. Which is a rewrite in Golang.
 
